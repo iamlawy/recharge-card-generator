@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="rechargecard.css">
+<body>
+   <div id="container">
+    
+<div id="small_d">
+<select name="" id="network">
+    <option value="">NETWORK</option>
+    <option value="MTN">MTN</option>
+    <option value="GLO">GLO</option>
+    <option value="AIRTEL">AIRTEL</option>
+    <option value="9MOBILE">9MOBILE</option>
+</select>
+
+
+<select name="" id="amount">
+    <option value="">AMOUNT </option>
+    <option value="100">100</option>
+    <option value="200">200</option>
+    <option value="500">500</option>
+    <option value="1000">1000</option>
+</select>
+</div>
+<br>
+<button id="pin" onclick="generate()">Generate pin</button>
+<h1 id="genit"></h1>
+
+<input type="" id="enter" placeholder="Enter your pin: ">
+<br><br>
+<button onclick="load()" id="load">Load Airtime</button>
+   </div>
+</body>
+</html>
+<script>
+    let butto=document.getElementById('genit')
+    let second=document.getElementById('amount')
+    let card= document.getElementById('network')
+    let input=document.getElementById('enter')
+    function generate(){
+        console.log(card.value);
+        if(card.value !== "" && second.value !== ""){
+            butto.innerHTML=Math.floor(Math.random()*100000000000000000)
+        }
+        else{
+            alert("input field cannot be empty")
+        }
+       
+    }
+    function load(){
+        console.log(card.value);
+        console.log(second.value);
+        console.log(input.value);
+        if(input.value.startsWith("*311*") && input.value.endsWith("#") && input.value.includes(genit.innerHTML)){
+            alert(`your ${card.value} ${second.value} recharge card successful`)
+        }
+        else{
+            alert("invalid code")
+        }
+    }
+</script>
